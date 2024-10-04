@@ -38,7 +38,7 @@ export default function Home() {
             whileHover={{ scale: 1.2 }}
             whileTap={{ scale: 0.9 }}
             transition={{ type: "spring", stiffness: 400, damping: 12, duration: 2 }}
-            href="#contact"
+            href="mailto:pfandade@buffalo.edu"
           > Contact Me <FiArrowUpRight size={20} /> </motion.button>
         </div>
         <motion.div
