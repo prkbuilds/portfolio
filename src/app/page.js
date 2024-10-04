@@ -2,18 +2,24 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { FiArrowUpRight } from "react-icons/fi";
+import { NavigationMenuDemo } from "./Navbar";
+import { Project } from "./Project";
+import { ParallaxTech } from "./TechStack";
 
 export default function Home() {
   return (
-    <>
-      <div className="grid grid-cols-2 place-content-center min-h-screen p-8 pb-20 gap-20 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-        <div className="place-content-center">
+    <main className="w-100">
+      <NavigationMenuDemo />
+      <div className="grid md:grid-cols-2 place-content-center min-h-screen p-8 pb-20 gap-20 sm:p-20 font-[family-name:var(--font-geist-sans)] 
+        bg-[url('/images/grid.png')]/75 bg-repeat bg-contain bg-fixed">
+        <div id="about-me" className="place-content-center pt-20 md:pt-0 mt-20 md:mt-0">
           <motion.h1 
             className="text-5xl font-bold mb-9"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ ease: 'linear', duration: 1, x: 0 }}
-          >Hi! I am Pratik Fandade</motion.h1>
+          >{'<'}Hi! I am Pratik Fandade{' />'}</motion.h1>
           <motion.p 
             className="leading-7 mb-3"
             initial={{ opacity: 0 }}
@@ -21,17 +27,18 @@ export default function Home() {
             transition={{ ease: 'linear', duration: 2 }}
           >
             I am a skilled Software Developer with experience in designing and analyzing web applications. I specialize in front-end and back-end 
-            development using the MERN stack, Material-UI, REST APIs, and MVC architecture. My expertise extends to scaling cloud applications 
-            with GCP and AWS, and I have a strong interest in cryptography and computer security.
+            development using ReactJS/NextJS/VueJS/Astro, gRPC/Rest, NodeJS/Django and Micro-services & MVC architecture. My expertise extends to scaling cloud
+            applications with GCP and AWS leveraging Docker, Kubernetes, RabbitMQ & BigQuery, and I have a strong interest in cryptography and computer security.
           </motion.p>
           <motion.button
-            className="button bg-primary text-white rounded py-3 px-6"
+            className="button inline-flex items-center bg-primary text-white rounded py-3 px-6"
             initial={{ opacity: 0, x: -100 }}
             animate={{ opacity: 1, x: 0 }}
             whileHover={{ scale: 1.2 }}
             whileTap={{ scale: 0.9 }}
-            transition={{ type: "spring", stiffness: 400, damping: 10, duration: 2 }}
-          >Conatact</motion.button>
+            transition={{ type: "spring", stiffness: 400, damping: 12, duration: 2 }}
+            href="#contact"
+          > Contact Me <FiArrowUpRight size={20} /> </motion.button>
         </div>
         <motion.div
           className="place-content-center"
@@ -49,12 +56,20 @@ export default function Home() {
           }}
           style={{ origin: 0.5 }}
         >
-          <Image className="aspect-square object-cover rounded-lg" src="/hero.jpeg" width={500} height={500} alt="hero" />
+          <Image className="aspect-square object-cover rounded-lg" src="/images/hero.jpeg" width={500} height={500} alt="hero" />
         </motion.div>
       </div>
-      <div className="min-h-screen bg-fixed"></div>
-      <div className="grid grid-cols-2 place-content-center min-h-screen p-8 pb-20 gap-20 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+      <ParallaxTech />
+      <div id="projects" className="hidden text-center min-h-screen p-8 pb-20 gap-20 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+        <h1
+            className="text-5xl font-bold mb-9"
+        > Projects </h1>
+        <div className="grid grid-cols-3 place-content-center p-8 pb-20 gap-20 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+          <Project />
+        </div>
       </div>
-    </>
+      <div id="contact" className="hidden grid grid-cols-2 place-content-center min-h-screen p-8 pb-20 gap-20 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+      </div>
+    </main>
   );
 }
