@@ -10,6 +10,7 @@ import { ParallaxTech } from "./TechStack";
 export default function Home() {
   return (
     <main className="w-100">
+      <title>Pratik Fandade</title>
       <NavigationMenuDemo />
       <div className="grid md:grid-cols-2 place-content-center min-h-screen p-8 pb-20 gap-20 sm:p-20 font-[family-name:var(--font-geist-sans)] 
         bg-[url('/images/grid.png')]/75 bg-repeat bg-contain bg-fixed">
