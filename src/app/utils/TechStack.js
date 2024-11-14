@@ -58,7 +58,7 @@ function ParallaxText({ baseVelocity = 100 }) {
   });
 
   return (
-    <div className="hidden parallax overflow-hidden">
+    <div className="parallax overflow-hidden">
       <motion.div
         className="flex gap-20 opacity-30 whitespace-nowrap flex-nowrap mb-10"
         style={{ x }}

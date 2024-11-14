@@ -43,7 +43,6 @@ export default function Home() {
         bg-[url('/images/grid.png')]/75 bg-repeat bg-contain bg-fixed"
       >
         <div
-          id="about-me"
           className="place-content-center pt-20 md:pt-0 mt-20 md:mt-0"
         >
           <motion.p
@@ -124,10 +123,11 @@ export default function Home() {
       </div>
       <ParallaxTech />
       <div
-        className="min-h-screen p-8 pb-20 gap-20 sm:p-20 font-[family-name:var(--font-geist-sans)] 
+        id="projects"
+        className="min-h-screen place-content-center p-8 pb-20 gap-20 sm:p-20 font-[family-name:var(--font-geist-sans)] 
         bg-repeat bg-contain bg-fixed"
       >
-        <div id="project" className="place-content-center pt-20">
+        <div className="place-content-center pt-20">
           <motion.h1
             className="text-5xl font-bold mb-9"
             initial={{ opacity: 0 }}
@@ -136,7 +136,7 @@ export default function Home() {
           >
             Projects
           </motion.h1>
-          <div className="project-list grid grid-cols-3 gap-4">
+          <div className="project-list grid grid-cols-1 md:grid-cols-3 gap-4">
             {repos.map((repo) => (
               <Card key={repo.id}>
                 <CardHeader>
@@ -167,11 +167,11 @@ export default function Home() {
         </div>
       </div>
       <div
-        className="grid md:grid-cols-2 place-content-center min-h-screen p-8 pb-20 gap-20 sm:p-20 font-[family-name:var(--font-geist-sans)] 
+        id="about-me"
+        className="place-content-center min-h-screen p-8 pb-20 gap-20 sm:p-20 font-[family-name:var(--font-geist-sans)] 
         bg-[url('/images/grid.png')]/75 bg-repeat bg-contain bg-fixed"
       >
         <div
-          id="about-me"
           className="place-content-center pt-20 md:pt-0 mt-20 md:mt-0"
         >
           <motion.p
@@ -183,20 +183,12 @@ export default function Home() {
             Software Developer
           </motion.p>
           <motion.h1
-            className="text-5xl font-bold"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ ease: 'linear', duration: 1, x: 0 }}
-          >
-            {'<'}Heloo! I&apos;m
-          </motion.h1>
-          <motion.h1
             className="text-5xl font-bold mb-9"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ ease: 'linear', duration: 1, x: 0 }}
           >
-            Pratik Fandade{' />'}
+            About Me
           </motion.h1>
           <motion.p
             className="leading-7 mb-3"
@@ -209,58 +201,33 @@ export default function Home() {
             development using the MERN stack, Material-UI, REST APIs, and MVC
             architecture. My expertise extends to scaling cloud applications
             with GCP and AWS, and I have a strong interest in cryptography and
-            computer security. I’ve contributed to the development of
-            enterprise-level software that supports the sale of 10M+
-            industry-leading products to 100,000+ businesses worldwide.
-            Recently, I completed a Stock Market Analysis & Prediction project,
-            presented at IC-ICN 2022, which underscores my commitment to
-            leveraging advanced technologies for impactful solutions. As a
-            Machine Learning enthusiast, I actively engage in projects to deepen
-            my expertise and stay abreast of emerging technologies. I am always
-            open to exploring new opportunities and collaborations in tech.
+            computer security.
           </motion.p>
-          <motion.button
-            className="button inline-flex items-center bg-primary text-white rounded py-3 px-6"
-            initial={{ opacity: 0, x: -100 }}
-            animate={{ opacity: 1, x: 0 }}
-            whileHover={{ scale: 1.2 }}
-            whileTap={{ scale: 0.9 }}
-            transition={{
-              type: 'spring',
-              stiffness: 400,
-              damping: 12,
-              duration: 2,
-            }}
-            href="mailto:pfandade@buffalo.edu"
+          <motion.p
+            className="leading-7 mb-3"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ ease: 'linear', duration: 2 }}
           >
-            {' '}
-            Contact Me <FiArrowUpRight size={20} />{' '}
-          </motion.button>
+            I’ve contributed to the development of enterprise-level software
+            that supports the sale of 10M+ industry-leading products to 100,000+
+            businesses worldwide. Recently, I completed a Stock Market Analysis
+            & Prediction project, presented at IC-ICN 2022, which underscores my
+            commitment to leveraging advanced technologies for impactful
+            solutions.
+          </motion.p>
+          <motion.p
+            className="leading-7 mb-3"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ ease: 'linear', duration: 2 }}
+          >
+            As a Machine Learning enthusiast, I actively engage in projects to
+            deepen my expertise and stay abreast of emerging technologies. I am
+            always open to exploring new opportunities and collaborations in
+            tech.
+          </motion.p>
         </div>
-        <motion.div
-          className="place-content-center"
-          initial={{ scale: 0 }}
-          animate={{ rotate: 360, scale: 1 }}
-          transition={{
-            type: 'spring',
-            stiffness: 260,
-            damping: 20,
-          }}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{
-            scale: 0.8,
-            borderRadius: '100%',
-          }}
-          style={{ origin: 0.5 }}
-        >
-          <Image
-            className="aspect-square object-cover rounded-lg"
-            src="/images/hero.jpeg"
-            width={500}
-            height={500}
-            alt="hero"
-          />
-        </motion.div>
       </div>
     </main>
   );
