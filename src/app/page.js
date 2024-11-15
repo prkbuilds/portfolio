@@ -17,29 +17,6 @@ import {
 
 export default function Home() {
   const [repos, setRepos] = useState([]);
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  useEffect(() => {
-    const darkModePreference = localStorage.getItem('dark-mode');
-    if (darkModePreference === 'enabled') {
-      document.documentElement.classList.add('dark');
-      setIsDarkMode(true);
-    } else if (darkModePreference === 'disabled') {
-      document.documentElement.classList.remove('dark');
-      setIsDarkMode(false);
-    }
-  }, []);
-
-  const toggleDarkMode = () => {
-    if (isDarkMode) {
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem('dark-mode', 'disabled');
-    } else {
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('dark-mode', 'enabled');
-    }
-    setIsDarkMode(!isDarkMode);
-  };
 
   useEffect(() => {
     async function fetchGitHubRepos() {
