@@ -8,6 +8,8 @@ import {
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
+  NavigationMenuContent,
+  NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
 import { Button } from '@/components/ui/button';
@@ -16,6 +18,8 @@ import { FiLinkedin, FiGithub, FiTwitter, FiMoon, FiSun } from 'react-icons/fi';
 
 export function NavBar() {
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [orientation, setOrientation] = useState('vertical');
+
 
   useEffect(() => {
     const darkModePreference = localStorage.getItem('dark-mode');
@@ -38,6 +42,22 @@ export function NavBar() {
     }
     setIsDarkMode(!isDarkMode);
   };
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 640) {
+        setOrientation('horizontal');
+      } else {
+        setOrientation('vertical');
+      }
+    };
+
+    handleResize(); // Check initial load
+    window.addEventListener('resize', handleResize); // Update on resize
+
+    return () => window.removeEventListener('resize', handleResize); // Cleanup
+  }, []);
+
   return (
     <NavigationMenu className="fixed justify-between p-10 max-w-screen w-screen">
       <NavigationMenuList className="place-items-start">
@@ -63,40 +83,77 @@ export function NavBar() {
           </Link>
         </NavigationMenuItem>
       </NavigationMenuList>
-      <NavigationMenuList className="w-full">
-        <NavigationMenuItem>
-          <Link
-            href="https://drive.google.com/file/d/1Qhj2YHR-TKe4W0dq6t2qJOqCodOz3VZY/view"
-            legacyBehavior
-            passHref
-          >
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Resume
-            </NavigationMenuLink>
-          </Link>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <Link href="#projects" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Projects
-            </NavigationMenuLink>
-          </Link>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <Link href="/#contact" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Contact
-            </NavigationMenuLink>
-          </Link>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <Link href="#about-me" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              About Me
-            </NavigationMenuLink>
-          </Link>
-        </NavigationMenuItem>
-      </NavigationMenuList>
+      {orientation === 'vertical' ? (
+        <NavigationMenuList className="hidden w-full bg-white dark:bg-gray-950">
+          <NavigationMenuItem className="hidden">
+            <NavigationMenuTrigger>Menu</NavigationMenuTrigger>
+            <NavigationMenuContent>
+              <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                <Link
+                  href="https://drive.google.com/file/d/1Qhj2YHR-TKe4W0dq6t2qJOqCodOz3VZY/view"
+                  legacyBehavior
+                  passHref
+                >
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                    Resume
+                  </NavigationMenuLink>
+                </Link>
+                <Link href="#projects" legacyBehavior passHref>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                    Projects
+                  </NavigationMenuLink>
+                </Link>
+                <Link href="/#contact" legacyBehavior passHref>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                    Contact
+                  </NavigationMenuLink>
+                </Link>
+                <Link href="#about-me" legacyBehavior passHref>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                    About Me
+                  </NavigationMenuLink>
+                </Link>
+              </ul>
+            </NavigationMenuContent>
+          </NavigationMenuItem>
+
+        </NavigationMenuList>
+      ) : (
+        <NavigationMenuList className="w-full bg-white dark:bg-gray-950">
+          <NavigationMenuItem>
+            <Link
+              href="https://drive.google.com/file/d/1Qhj2YHR-TKe4W0dq6t2qJOqCodOz3VZY/view"
+              legacyBehavior
+              passHref
+            >
+              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                Resume
+              </NavigationMenuLink>
+            </Link>
+          </NavigationMenuItem>
+          <NavigationMenuItem>
+            <Link href="#projects" legacyBehavior passHref>
+              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                Projects
+              </NavigationMenuLink>
+            </Link>
+          </NavigationMenuItem>
+          <NavigationMenuItem>
+            <Link href="/#contact" legacyBehavior passHref>
+              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                Contact
+              </NavigationMenuLink>
+            </Link>
+          </NavigationMenuItem>
+          <NavigationMenuItem>
+            <Link href="#about-me" legacyBehavior passHref>
+              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                About Me
+              </NavigationMenuLink>
+            </Link>
+          </NavigationMenuItem>
+        </NavigationMenuList>
+      )}
       <NavigationMenuList className="gap-3">
         <NavigationMenuItem>
           <Link href="https://twitter.com/prkbuild" legacyBehavior passHref>

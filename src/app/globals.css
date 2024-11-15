@@ -12,6 +12,15 @@ body {
   }
 }
 
+[data-orientation='vertical'] {
+  display: block;
+}
+
+[data-orientation='horizontal'] {
+  display: flex;
+  flex-direction: row;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
