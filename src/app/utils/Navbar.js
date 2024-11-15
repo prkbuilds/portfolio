@@ -156,7 +156,7 @@ export function NavBar() {
       )}
       <NavigationMenuList className="gap-3">
         <NavigationMenuItem>
-          <Link href="https://twitter.com/prkbuild" legacyBehavior passHref>
+          <Link href="https://twitter.com/prkbuilds" legacyBehavior passHref>
             <NavigationMenuLink>
               <motion.div
                 initial={{ opacity: 0, x: 100 }}
