@@ -42,9 +42,7 @@ export default function Home() {
         className="grid md:grid-cols-2 place-content-center min-h-screen p-8 pb-20 gap-20 sm:p-20 font-[family-name:var(--font-geist-sans)] 
         bg-[url('/images/grid.png')]/75 bg-repeat bg-contain bg-fixed"
       >
-        <div
-          className="place-content-center pt-20 md:pt-0 mt-20 md:mt-0"
-        >
+        <div className="place-content-center pt-20 md:pt-0 mt-20 md:mt-0">
           <motion.p
             className="leading-7 mb-3"
             initial={{ opacity: 0 }}
@@ -171,9 +169,7 @@ export default function Home() {
         className="place-content-center min-h-screen p-8 pb-20 gap-20 sm:p-20 font-[family-name:var(--font-geist-sans)] 
         bg-[url('/images/grid.png')]/75 bg-repeat bg-contain bg-fixed"
       >
-        <div
-          className="place-content-center pt-20 md:pt-0 mt-20 md:mt-0"
-        >
+        <div className="place-content-center pt-20 md:pt-0 mt-20 md:mt-0">
           <motion.p
             className="leading-7 mb-3"
             initial={{ opacity: 0 }}
@@ -215,6 +211,18 @@ export default function Home() {
             & Prediction project, presented at IC-ICN 2022, which underscores my
             commitment to leveraging advanced technologies for impactful
             solutions.
+          </motion.p>
+          <motion.p
+            className="leading-7 mb-3"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ ease: 'linear', duration: 2 }}
+          >
+            In addition to my professional work, I am passionate about
+            open-source contributions. Currently, I contribute as a reviewer on
+            the <a href="https://github.com/diesel-rs/diesel" target="_blank">Diesel</a> repository, helping to ensure quality Rust code for a
+            robust database toolkit. This experience has enhanced my
+            collaboration skills and expanded my knowledge in Rust development.
           </motion.p>
           <motion.p
             className="leading-7 mb-3"

@@ -40,7 +40,11 @@ export function NavBar() {
       </NavigationMenuList>
       <NavigationMenuList className="w-full">
         <NavigationMenuItem>
-          <Link href="https://drive.google.com/file/d/1Qhj2YHR-TKe4W0dq6t2qJOqCodOz3VZY/view" legacyBehavior passHref>
+          <Link
+            href="https://drive.google.com/file/d/1Qhj2YHR-TKe4W0dq6t2qJOqCodOz3VZY/view"
+            legacyBehavior
+            passHref
+          >
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               Resume
             </NavigationMenuLink>
