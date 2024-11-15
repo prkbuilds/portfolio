@@ -204,47 +204,97 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <Card>
             <CardHeader>
-              <CardTitle className="text-2xl font-semibold mb-2">Senior Technology Associate at Colgate Palmolive</CardTitle>
-              <p className="text-sm">August 2023 – August 2024 | Mumbai, India</p>
+              <CardTitle className="text-2xl font-semibold mb-2">
+                Senior Technology Associate at Colgate Palmolive
+              </CardTitle>
+              <p className="text-sm">
+                August 2023 – August 2024 | Mumbai, India
+              </p>
             </CardHeader>
             <CardContent>
               <ul className="mt-4 list-disc pl-6">
-                <li>Collaborated with 16 developers to build and maintain proprietary software, leveraging Django, React, GCP, Kubernetes, Docker, and Celery to build APIs supporting over 1 million concurrent I/Os with low latency.</li>
-                <li>Assisted a team of developers to design & develop a software solution for strategic market performance, achieving 50% time savings and better efficacy.</li>
-                <li>Managed software with a team of 15 employees, providing services to 10,000+ businesses to identify & improve the system for better sales of 100,000+ industry-leading products.</li>
-                <li>Actively engaged with developers to improve front-end architecture, reducing technical overhead by 30%.</li>
-              </ul>
-              </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-2xl font-semibold mb-2">Campus Associate at Colgate Palmolive</CardTitle>
-              <p className="text-sm">August 2022 – August 2023 | Mumbai, India</p>
-            </CardHeader>
-            <CardContent>
-              <ul className="mt-4 list-disc pl-6">
-                <li>Contributed with developers on improving the front end using libraries like Ag-grid, ant-design.js, and MUI-X to enhance data visualization solutions, causing reduced performance overhead by 70%.</li>
-                <li>Resolved over 100+ bugs, ensuring optimized system performance and accuracy, leading to better handling of critical business tasks.</li>
-                <li>Led testing initiatives and enhanced GitHub Actions to improve teamwork across global teams, which enhanced build times by 60%.</li>
+                <li>
+                  Collaborated with 16 developers to build and maintain
+                  proprietary software, leveraging Django, React, GCP,
+                  Kubernetes, Docker, and Celery to build APIs supporting over 1
+                  million concurrent I/Os with low latency.
+                </li>
+                <li>
+                  Assisted a team of developers to design & develop a software
+                  solution for strategic market performance, achieving 50% time
+                  savings and better efficacy.
+                </li>
+                <li>
+                  Managed software with a team of 15 employees, providing
+                  services to 10,000+ businesses to identify & improve the
+                  system for better sales of 100,000+ industry-leading products.
+                </li>
+                <li>
+                  Actively engaged with developers to improve front-end
+                  architecture, reducing technical overhead by 30%.
+                </li>
               </ul>
             </CardContent>
           </Card>
 
           <Card>
             <CardHeader>
-              <CardTitle className="text-2xl font-semibold mb-2">Intern at Colgate Palmolive</CardTitle>
-              <p className="text-sm">February 2022 – August 2022 | Mumbai, India</p>
+              <CardTitle className="text-2xl font-semibold mb-2">
+                Campus Associate at Colgate Palmolive
+              </CardTitle>
+              <p className="text-sm">
+                August 2022 – August 2023 | Mumbai, India
+              </p>
             </CardHeader>
             <CardContent>
-            <ul className="mt-4 list-disc pl-6">
-              <li>Cooperated alongside 6 Full-Stack developers to develop & maintain industry-grade software used in 100+ countries.</li>
-              <li>Successfully developed a feature to manage & process 1000s of data points within a second.</li>
-              <li>Directly contributed to a global project, becoming a top-10 contributor at the time with 50+ commits and 1k+ additions/deletions.</li>
-            </ul>
+              <ul className="mt-4 list-disc pl-6">
+                <li>
+                  Contributed with developers on improving the front end using
+                  libraries like Ag-grid, ant-design.js, and MUI-X to enhance
+                  data visualization solutions, causing reduced performance
+                  overhead by 70%.
+                </li>
+                <li>
+                  Resolved over 100+ bugs, ensuring optimized system performance
+                  and accuracy, leading to better handling of critical business
+                  tasks.
+                </li>
+                <li>
+                  Led testing initiatives and enhanced GitHub Actions to improve
+                  teamwork across global teams, which enhanced build times by
+                  60%.
+                </li>
+              </ul>
             </CardContent>
           </Card>
 
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-2xl font-semibold mb-2">
+                Intern at Colgate Palmolive
+              </CardTitle>
+              <p className="text-sm">
+                February 2022 – August 2022 | Mumbai, India
+              </p>
+            </CardHeader>
+            <CardContent>
+              <ul className="mt-4 list-disc pl-6">
+                <li>
+                  Cooperated alongside 6 Full-Stack developers to develop &
+                  maintain industry-grade software used in 100+ countries.
+                </li>
+                <li>
+                  Successfully developed a feature to manage & process 1000s of
+                  data points within a second.
+                </li>
+                <li>
+                  Directly contributed to a global project, becoming a top-10
+                  contributor at the time with 50+ commits and 1k+
+                  additions/deletions.
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
         </div>
       </div>
       <div
@@ -303,9 +353,13 @@ export default function Home() {
           >
             In addition to my professional work, I am passionate about
             open-source contributions. Currently, I contribute as a reviewer on
-            the <a href="https://github.com/diesel-rs/diesel" target="_blank">Diesel</a> repository, helping to ensure quality Rust code for a
-            robust database toolkit. This experience has enhanced my
-            collaboration skills and expanded my knowledge in Rust development.
+            the{' '}
+            <a href="https://github.com/diesel-rs/diesel" target="_blank">
+              Diesel
+            </a>{' '}
+            repository, helping to ensure quality Rust code for a robust
+            database toolkit. This experience has enhanced my collaboration
+            skills and expanded my knowledge in Rust development.
           </motion.p>
           <motion.p
             className="leading-7 mb-3"
