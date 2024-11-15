@@ -170,9 +170,9 @@ function ParallaxText({ baseVelocity = 100 }) {
 
 export function ParallaxTech() {
   return (
-    <section>
-      <ParallaxText baseVelocity={-5} />
-      <ParallaxText baseVelocity={10} />
+    <section className="hidden">
+      <ParallaxText key="a" baseVelocity={-5} />
+      <ParallaxText key="b" baseVelocity={10} />
     </section>
   );
 }

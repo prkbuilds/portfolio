@@ -1,6 +1,6 @@
 'use client';
 
-import * as React from 'react';
+import { useState, useEffect, forwardRef } from 'react';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import {
@@ -10,11 +10,36 @@ import {
   NavigationMenuList,
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
+import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
+import { FiLinkedin, FiGithub, FiTwitter, FiMoon, FiSun } from 'react-icons/fi';
 
 export function NavBar() {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    const darkModePreference = localStorage.getItem('dark-mode');
+    if (darkModePreference === 'enabled') {
+      document.documentElement.classList.add('dark');
+      setIsDarkMode(true);
+    } else if (darkModePreference === 'disabled') {
+      document.documentElement.classList.remove('dark');
+      setIsDarkMode(false);
+    }
+  }, []);
+
+  const toggleDarkMode = () => {
+    if (isDarkMode) {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('dark-mode', 'disabled');
+    } else {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('dark-mode', 'enabled');
+    }
+    setIsDarkMode(!isDarkMode);
+  };
   return (
-    <NavigationMenu className="fixed justify-between p-10 max-w-screen w-screen bg-white">
+    <NavigationMenu className="fixed justify-between p-10 max-w-screen w-screen">
       <NavigationMenuList className="place-items-start">
         <NavigationMenuItem>
           <Link href="/" legacyBehavior passHref>
@@ -76,11 +101,7 @@ export function NavBar() {
         <NavigationMenuItem>
           <Link href="https://twitter.com/prkbuild" legacyBehavior passHref>
             <NavigationMenuLink>
-              <motion.img
-                src={'/icons/twitter.svg'}
-                alt="Twitter"
-                width={24}
-                height={24}
+              <motion.div
                 initial={{ opacity: 0, x: 100 }}
                 animate={{ opacity: 1, x: 0 }}
                 whileHover={{ scale: 1.2 }}
@@ -91,18 +112,16 @@ export function NavBar() {
                   damping: 12,
                   duration: 2,
                 }}
-              />
+              >
+                <FiTwitter size={24} />
+              </motion.div>
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
         <NavigationMenuItem>
           <Link href="https://github.com/pratikfandade" legacyBehavior passHref>
             <NavigationMenuLink>
-              <motion.img
-                src={'/icons/github.svg'}
-                alt="GitHub"
-                width={24}
-                height={24}
+              <motion.div
                 initial={{ opacity: 0, x: 100 }}
                 animate={{ opacity: 1, x: 0 }}
                 whileHover={{ scale: 1.2 }}
@@ -113,7 +132,9 @@ export function NavBar() {
                   damping: 12,
                   duration: 2,
                 }}
-              />
+              >
+                <FiGithub size={24} />
+              </motion.div>
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
@@ -124,11 +145,7 @@ export function NavBar() {
             passHref
           >
             <NavigationMenuLink>
-              <motion.img
-                src={'/icons/linkedin.svg'}
-                alt="LinkedIn"
-                width={24}
-                height={24}
+              <motion.div
                 initial={{ opacity: 0, x: 100 }}
                 animate={{ opacity: 1, x: 0 }}
                 whileHover={{ scale: 1.2 }}
@@ -139,20 +156,25 @@ export function NavBar() {
                   damping: 12,
                   duration: 2,
                 }}
-              />
+              >
+                <FiLinkedin size={24} />
+              </motion.div>
             </NavigationMenuLink>
           </Link>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          {isDarkMode ? <FiSun onClick={toggleDarkMode} size={24} /> : <FiMoon onClick={toggleDarkMode} size={24} />}
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
   );
 }
 
-const ListItem = React.forwardRef(
+const ListItem = forwardRef(
   ({ className, title, children, ...props }, ref) => {
     return (
       <li>
-        <NavigationMenuLink asChild>
+        <NavigationMenuLink key={title} asChild>
           <a
             ref={ref}
             className={cn(
