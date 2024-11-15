@@ -44,7 +44,7 @@ export default function Home() {
   useEffect(() => {
     async function fetchGitHubRepos() {
       const response = await fetch(
-        'https://api.github.com/users/pratikfandade/repos'
+        'https://api.github.com/users/prkbuilds/repos'
       );
       const repos = await response.json();
 
@@ -119,7 +119,7 @@ export default function Home() {
           </motion.a>
         </div>
         <motion.div
-          className="place-content-center"
+          className="place-content-center hidden"
           initial={{ scale: 0 }}
           animate={{ rotate: 360, scale: 1 }}
           transition={{

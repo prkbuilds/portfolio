@@ -119,7 +119,7 @@ export function NavBar() {
           </Link>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="https://github.com/pratikfandade" legacyBehavior passHref>
+          <Link href="https://github.com/prkbuilds" legacyBehavior passHref>
             <NavigationMenuLink>
               <motion.div
                 initial={{ opacity: 0, x: 100 }}
