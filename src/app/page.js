@@ -31,6 +31,7 @@ export default function Home() {
       console.log(specificRepos);
       setRepos(specificRepos);
     }
+    fetchGitHubRepos();
 
     const main = document.querySelector('main');
     if (!main) return;
@@ -47,7 +48,6 @@ export default function Home() {
 
     main.addEventListener('mousemove', handleMouseMove);
 
-    fetchGitHubRepos();
 
     return () => {
       main.removeEventListener('mousemove', handleMouseMove);
@@ -93,7 +93,7 @@ export default function Home() {
             animate={{ opacity: 1 }}
             transition={{ ease: 'linear', duration: 2 }}
           >
-            I am a skilled Software Developer with experience in designing and
+            I am a skilled <b className="text-orange-400">Software Developer</b> with experience in designing and
             crafting software applications which are Integrated with cloud to
             help solve real world problems.
           </motion.p>
@@ -350,7 +350,7 @@ export default function Home() {
             In addition to my professional work, I am passionate about
             open-source contributions. Currently, I contribute as a reviewer on
             the{' '}
-            <a href="https://github.com/diesel-rs/diesel" target="_blank">
+            <a className="text-orange-400 underline underline-offset-2" href="https://github.com/diesel-rs/diesel" target="_blank">
               Diesel
             </a>{' '}
             repository, helping to ensure quality Rust code for a robust

@@ -32,17 +32,21 @@ export function NavBar() {
     } else if (darkModePreference === 'disabled') {
       document.documentElement.classList.remove('dark');
       setIsDarkMode(false);
-      main.style.setProperty('--color', '#1E90FF');
+      main.style.setProperty('--color', '#1EA0FF');
     }
   }, []);
 
   const toggleDarkMode = () => {
+    const main = document.querySelector('main');
+    if (!main) return;
     if (isDarkMode) {
       document.documentElement.classList.remove('dark');
       localStorage.setItem('dark-mode', 'disabled');
+      main.style.setProperty('--color', '#1EA0FF');
     } else {
       document.documentElement.classList.add('dark');
       localStorage.setItem('dark-mode', 'enabled');
+      main.style.setProperty('--color', '#0F52BA');
     }
     setIsDarkMode(!isDarkMode);
   };
