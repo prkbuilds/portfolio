@@ -67,7 +67,7 @@ export function NavBar() {
   }, []);
 
   return (
-    <NavigationMenu className="fixed justify-between p-10 max-w-screen w-screen">
+    <NavigationMenu className="fixed backdrop-blur justify-between p-10 max-w-screen w-screen">
       <NavigationMenuList className="place-items-start">
         <NavigationMenuItem>
           <Link href="/" legacyBehavior passHref>
@@ -92,7 +92,7 @@ export function NavBar() {
         </NavigationMenuItem>
       </NavigationMenuList>
       {orientation === 'vertical' ? (
-        <NavigationMenuList className="hidden w-full bg-white dark:bg-gray-950">
+        <NavigationMenuList className="hidden w-full">
           <NavigationMenuItem className="hidden">
             <NavigationMenuTrigger>Menu</NavigationMenuTrigger>
             <NavigationMenuContent>
@@ -127,36 +127,92 @@ export function NavBar() {
 
         </NavigationMenuList>
       ) : (
-        <NavigationMenuList className="w-full bg-white dark:bg-gray-950">
+        <NavigationMenuList className="w-full gap-7">
           <NavigationMenuItem>
             <Link
               href="https://drive.google.com/file/d/1Qhj2YHR-TKe4W0dq6t2qJOqCodOz3VZY/view"
               legacyBehavior
               passHref
             >
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Resume
+              <NavigationMenuLink className="bg-transparent" >
+                <motion.p
+                  className="leading-7"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  whileHover={{ scale: 1.2 }}
+                  whileTap={{ scale: 0.9 }}
+                  transition={{
+                    type: 'spring',
+                    stiffness: 400,
+                    damping: 12,
+                    duration: 2,
+                  }}
+                >
+                  Resume
+                </motion.p>
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
           <NavigationMenuItem>
             <Link href="#projects" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Projects
+              <NavigationMenuLink className="bg-transparent" >
+                <motion.p
+                  className="leading-7"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  whileHover={{ scale: 1.2 }}
+                  whileTap={{ scale: 0.9 }}
+                  transition={{
+                    type: 'spring',
+                    stiffness: 400,
+                    damping: 12,
+                    duration: 2,
+                  }}
+                >
+                  Projects
+                </motion.p>
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
           <NavigationMenuItem>
             <Link href="/#contact" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Contact
+              <NavigationMenuLink className="bg-transparent" >
+                <motion.p
+                  className="leading-7"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  whileHover={{ scale: 1.2 }}
+                  whileTap={{ scale: 0.9 }}
+                  transition={{
+                    type: 'spring',
+                    stiffness: 400,
+                    damping: 12,
+                    duration: 2,
+                  }}
+                >
+                  Contact
+                </motion.p>
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
           <NavigationMenuItem>
             <Link href="#about-me" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                About Me
+              <NavigationMenuLink className="bg-transparent">
+                <motion.p
+                  className="leading-7"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  whileHover={{ scale: 1.2 }}
+                  whileTap={{ scale: 0.9 }}
+                  transition={{
+                    type: 'spring',
+                    stiffness: 400,
+                    damping: 12,
+                    duration: 2,
+                  }}
+                >
+                  About Me
+                </motion.p>
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
