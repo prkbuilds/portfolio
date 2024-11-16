@@ -32,7 +32,26 @@ export default function Home() {
       setRepos(specificRepos);
     }
 
+    const main = document.querySelector('main');
+    if (!main) return;
+
+    const handleMouseMove = (e) => {
+      let x = e.pageX - main.offsetLeft;
+      let y = e.pageY - main.offsetTop;
+
+      setTimeout(() => {
+        main.style.setProperty('--x', `${x}px`);
+        main.style.setProperty('--y', `${y}px`);
+      }, 120);
+    };
+
+    main.addEventListener('mousemove', handleMouseMove);
+
     fetchGitHubRepos();
+
+    return () => {
+      main.removeEventListener('mousemove', handleMouseMove);
+    };
   }, []);
 
   return (

@@ -22,13 +22,17 @@ export function NavBar() {
 
 
   useEffect(() => {
+    const main = document.querySelector('main');
+    if (!main) return;
     const darkModePreference = localStorage.getItem('dark-mode');
     if (darkModePreference === 'enabled') {
       document.documentElement.classList.add('dark');
       setIsDarkMode(true);
+      main.style.setProperty('--color', '#0F52BA');
     } else if (darkModePreference === 'disabled') {
       document.documentElement.classList.remove('dark');
       setIsDarkMode(false);
+      main.style.setProperty('--color', '#1E90FF');
     }
   }, []);
 

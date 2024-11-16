@@ -6,6 +6,19 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+main::before {
+  background: radial-gradient(var(--color), transparent, transparent);
+  position: absolute;
+  top: var(--y);
+  left: var(--x);
+  transform: translate(-50%, -50%);
+  height: 40vw;
+  width: 40vw;
+  blur: 500px;
+  z-index: -1;
+  content: '';
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
