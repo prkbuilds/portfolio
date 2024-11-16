@@ -77,7 +77,7 @@ export default function Home() {
             animate={{ opacity: 1 }}
             transition={{ ease: 'linear', duration: 1, x: 0 }}
           >
-            {'<'}Heloo! I&apos;m
+            {'<'}Hello! I&apos;m
           </motion.h1>
           <motion.h1
             className="text-5xl font-bold mb-9"
