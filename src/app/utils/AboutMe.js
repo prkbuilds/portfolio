@@ -6,10 +6,10 @@ export function AboutMe() {
   return (
     <div
       id="about-me"
-      className="snap-section container mx-auto text-white place-content-center min-h-screen p-8 pb-20 gap-20 sm:p-20 font-[family-name:var(--font-geist-sans)] 
+      className="snap-section container mx-auto text-white place-content-center min-h-screen p-8 pb-20 gap-20 font-[family-name:var(--font-geist-sans)] 
       bg-[url('/images/grid.png')]/75 bg-repeat bg-contain bg-fixed"
     >
-      <div className="place-content-center pt-20 md:pt-0 mt-20 md:mt-0">
+      <div className="place-content-center pt-20">
         <motion.p
           className="leading-7 mb-3"
           initial={{ opacity: 0 }}

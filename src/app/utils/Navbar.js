@@ -29,151 +29,67 @@ import {
 } from 'react-icons/fi';
 
 export function NavBar() {
+  const navbarItems = [
+    { href: '#hero', icon: <FiHome size={24} />, tooltip: 'Home' },
+    { href: '#projects', icon: <FiPackage size={24} />, tooltip: 'Projects' },
+    {
+      href: '#experience',
+      icon: <FiBriefcase size={24} />,
+      tooltip: 'Experience',
+    },
+    { href: '#about-me', icon: <FiList size={24} />, tooltip: 'About Me' },
+    {
+      href: 'https://drive.google.com/file/d/1Qhj2YHR-TKe4W0dq6t2qJOqCodOz3VZY/view',
+      icon: <FiFileText size={24} />,
+      tooltip: 'Resume',
+      external: true, // Optional flag for external links
+    },
+  ];
+
   return (
     <>
-      <div className="flex z-10 gap-4 fixed bottom-4 left-1/2 transform -translate-x-1/2">
-        <TooltipProvider>
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <motion.div
-                initial={{ opacity: 0, x: 100 }}
-                animate={{ opacity: 1, x: 0 }}
-                whileHover={{ scale: 1.5, transformOrigin: 'bottom' }}
-                whileTap={{ scale: 0.9, transformOrigin: 'bottom' }}
-                transition={{
-                  type: 'spring',
-                  stiffness: 400,
-                  damping: 12,
-                  duration: 2,
-                }}
-              >
-                <Link href="#hero" legacyBehavior passHref>
-                  <Badge className="text-white bg-transparent hover:bg-transparent backdrop-blur-2xl drop-shadow-2xl backdrop-brightness-110 rounded-full p-2">
-                    <FiHome size={24} />
-                  </Badge>
-                </Link>
-              </motion.div>
-            </TooltipTrigger>
-            <TooltipContent className="text-white bg-transparent">
-              <p>Home</p>
-            </TooltipContent>
-          </Tooltip>
-        </TooltipProvider>
-        <TooltipProvider>
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <motion.div
-                initial={{ opacity: 0, x: 100 }}
-                animate={{ opacity: 1, x: 0 }}
-                whileHover={{ scale: 1.5, transformOrigin: 'bottom' }}
-                whileTap={{ scale: 0.9, transformOrigin: 'bottom' }}
-                transition={{
-                  type: 'spring',
-                  stiffness: 400,
-                  damping: 12,
-                  duration: 2,
-                }}
-              >
-                <Link href="#projects" legacyBehavior passHref>
-                  <Badge className="text-white bg-transparent hover:bg-transparent backdrop-blur-2xl drop-shadow-2xl backdrop-brightness-110 rounded-full p-2">
-                    <FiPackage size={24} />
-                  </Badge>
-                </Link>
-              </motion.div>
-            </TooltipTrigger>
-            <TooltipContent className="text-white bg-transparent">
-              <p>Projects</p>
-            </TooltipContent>
-          </Tooltip>
-        </TooltipProvider>
-        <TooltipProvider>
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <motion.div
-                initial={{ opacity: 0, x: 100 }}
-                animate={{ opacity: 1, x: 0 }}
-                whileHover={{ scale: 1.5, transformOrigin: 'bottom' }}
-                whileTap={{ scale: 0.9, transformOrigin: 'bottom' }}
-                transition={{
-                  type: 'spring',
-                  stiffness: 400,
-                  damping: 12,
-                  duration: 2,
-                }}
-              >
-                <Link href="#experience" legacyBehavior passHref>
-                  <Badge className="text-white bg-transparent hover:bg-transparent backdrop-blur-2xl drop-shadow-2xl backdrop-brightness-110 rounded-full p-2">
-                    <FiBriefcase size={24} />
-                  </Badge>
-                </Link>
-              </motion.div>
-            </TooltipTrigger>
-            <TooltipContent className="text-white bg-transparent">
-              <p>Experience</p>
-            </TooltipContent>
-          </Tooltip>
-        </TooltipProvider>
-        <TooltipProvider>
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <motion.div
-                initial={{ opacity: 0, x: 100 }}
-                animate={{ opacity: 1, x: 0 }}
-                whileHover={{ scale: 1.5, transformOrigin: 'bottom' }}
-                whileTap={{ scale: 0.9, transformOrigin: 'bottom' }}
-                transition={{
-                  type: 'spring',
-                  stiffness: 400,
-                  damping: 12,
-                  duration: 2,
-                }}
-              >
-                <Link href="#about-me" legacyBehavior passHref>
-                  <Badge className="text-white bg-transparent hover:bg-transparent backdrop-blur-2xl drop-shadow-2xl backdrop-brightness-110 rounded-full p-2">
-                    <FiList size={24} />
-                  </Badge>
-                </Link>
-              </motion.div>
-            </TooltipTrigger>
-            <TooltipContent className="text-white bg-transparent">
-              <p>About Me</p>
-            </TooltipContent>
-          </Tooltip>
-        </TooltipProvider>
-        <TooltipProvider>
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <motion.div
-                initial={{ opacity: 0, x: 100 }}
-                animate={{ opacity: 1, x: 0 }}
-                whileHover={{ scale: 1.5, transformOrigin: 'bottom' }}
-                whileTap={{ scale: 0.9, transformOrigin: 'bottom' }}
-                transition={{
-                  type: 'spring',
-                  stiffness: 400,
-                  damping: 12,
-                  duration: 2,
-                }}
-              >
-                <Link
-                  href="https://drive.google.com/file/d/1Qhj2YHR-TKe4W0dq6t2qJOqCodOz3VZY/view"
-                  target="_blank"
-                  legacyBehavior
-                  passHref
+      <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 flex z-10 gap-4">
+        {navbarItems.map((item, index) => (
+          <TooltipProvider key={index}>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <motion.div
+                  initial={{ opacity: 0, x: 100 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  whileHover={{
+                    scale: 1.5,
+                    transformOrigin: 'bottom',
+                  }}
+                  whileTap={{
+                    scale: 0.9,
+                    transformOrigin: 'bottom',
+                  }}
+                  transition={{
+                    type: 'spring',
+                    stiffness: 400,
+                    damping: 12,
+                    duration: 2,
+                  }}
                 >
-                  <a target="_blank" rel="noopener noreferrer">
+                  <Link
+                    href={item.href}
+                    target={item.external ? '_blank' : undefined}
+                    rel={item.external ? 'noopener noreferrer' : undefined}
+                    legacyBehavior
+                    passHref
+                  >
                     <Badge className="text-white bg-transparent hover:bg-transparent backdrop-blur-2xl drop-shadow-2xl backdrop-brightness-110 rounded-full p-2">
-                      <FiFileText size={24} />
+                      {item.icon}
                     </Badge>
-                  </a>
-                </Link>
-              </motion.div>
-            </TooltipTrigger>
-            <TooltipContent className="text-white bg-transparent">
-              <p>Resume</p>
-            </TooltipContent>
-          </Tooltip>
-        </TooltipProvider>
+                  </Link>
+                </motion.div>
+              </TooltipTrigger>
+              <TooltipContent className="text-white bg-transparent">
+                <p>{item.tooltip}</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+        ))}
       </div>
       <NavigationMenu className="fixed text-white backdrop-blur justify-between p-10 max-w-screen w-screen">
         <NavigationMenuList className="place-items-start">
