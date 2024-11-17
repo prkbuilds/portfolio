@@ -49,7 +49,7 @@ export function Projects() {
         </motion.h1>
         <div className="project-list grid grid-cols-1 md:grid-cols-3 gap-4">
           {repos.map((repo) => (
-            <Card className="bg-transparent border-0 backdrop-blur-2xl drop-shadow-2xl backdrop-brightness-110" key={repo.id}>
+            <Card className="bg-transparent border-0 backdrop-blur-2xl drop-shadow-2xl backdrop-brightness-110 flex flex-col" key={repo.id}>
               <CardHeader>
                 <CardTitle className="text-white">{repo.name}</CardTitle>
                 <CardDescription className="text-white">{repo.description}</CardDescription>
@@ -59,12 +59,13 @@ export function Projects() {
                   )}
                 </div>
               </CardHeader>
-              <CardFooter>
+              <div className="flex-grow"></div>
+              <CardFooter className="mt-auto">
                 <motion.a
-                  className="inline-flex items-center text-white border rounded py-3 px-6"
+                  className="inline-flex items-center text-white border rounded py-2 px-3"
                   initial={{ opacity: 0, x: -100 }}
                   animate={{ opacity: 1, x: 0 }}
-                  whileHover={{ scale: 1.2 }}
+                  whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                   transition={{
                     type: 'spring',
