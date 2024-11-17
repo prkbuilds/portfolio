@@ -55,7 +55,7 @@ export default function Home() {
     <main className="w-100 md:snap-container">
       <title>Pratik Fandade</title>
       <div class="gradient-bg">
-        {/*<svg xmlns="http://www.w3.org/2000/svg">
+        <svg xmlns="http://www.w3.org/2000/svg">
           <defs>
             <filter id="goo">
               <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
@@ -63,7 +63,7 @@ export default function Home() {
               <feBlend in="SourceGraphic" in2="goo" />
             </filter>
           </defs>
-        </svg>*/}
+        </svg>
         <div class="gradients-container">
           <div class="g1"></div>
           <div class="g2"></div>
