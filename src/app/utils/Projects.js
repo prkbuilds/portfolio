@@ -55,7 +55,7 @@ export function Projects() {
                 <CardDescription className="text-white">{repo.description}</CardDescription>
                 <div className="flex gap-2 flex-wrap">
                   {repo.topics.map((topic) => 
-                    (topic === "portfolio") ? null : (<Badge className="text-white" variant="outline">{topic}</Badge>)
+                    (topic === "portfolio") ? null : (<Badge key={topic} className="text-white" variant="outline">{topic}</Badge>)
                   )}
                 </div>
               </CardHeader>
