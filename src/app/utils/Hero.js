@@ -1,82 +1,10 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
-import * as THREE from 'three';
-import { FontLoader } from 'three/examples/jsm/loaders/FontLoader';
-import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { FiArrowUpRight } from 'react-icons/fi';
 
 export function Hero() {
-  const mountRef = useRef(null);
-
-  useEffect(() => {
-    const scene = new THREE.Scene();
-
-    const camera = new THREE.PerspectiveCamera(
-      75,
-      1,
-      0.1,
-      1000
-    );
-    camera.position.z = 5;
-
-    const renderer = new THREE.WebGLRenderer({ antialias: true });
-    renderer.setSize(400, 400);
-    renderer.setClearColor(0x000000, 0);
-    if (mountRef.current) {
-      mountRef.current.appendChild(renderer.domElement);
-    }
-
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
-    scene.add(ambientLight);
-
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-    directionalLight.position.set(5, 10, 7.5).normalize();
-    scene.add(directionalLight);
-
-    const clock = new THREE.Clock();
-
-    const loader = new FontLoader();
-    loader.load('https://threejs.org/examples/fonts/helvetiker_regular.typeface.json', (font) => {
-      const textGeometry = new TextGeometry('PB', {
-        font,
-        size: 1,
-        height: 0.5,
-        curveSegments: 12,
-        bevelEnabled: true,
-        bevelThickness: 0.03,
-        bevelSize: 0.02,
-        bevelSegments: 5,
-      });
-
-      const textMaterial = new THREE.MeshStandardMaterial({ color: '#FFFFFF' });
-      const textMesh = new THREE.Mesh(textGeometry, textMaterial);
-
-      textMesh.position.set(-0.75, 0, 0);
-      scene.add(textMesh);
-
-      const animate = () => {
-        requestAnimationFrame(animate);
-        const elapsedTime = clock.getElapsedTime();
-
-        textMesh.position.y = Math.sin(elapsedTime * 1.5) * 0.5;
-        textMesh.rotation.y += 0.01;
-
-        renderer.render(scene, camera);
-      };
-
-      animate();
-    });
-
-    return () => {
-      if (mountRef.current) {
-        mountRef.current.removeChild(renderer.domElement);
-      }
-    };
-  }, []);
-
   return (
     <div
       className="md:snap-section text-white container mx-auto grid md:grid-cols-2 place-content-center min-h-screen p-8 pb-20 gap-20 sm:p-20 font-[family-name:var(--font-geist-sans)] 
@@ -143,7 +71,7 @@ export function Hero() {
           stiffness: 260,
           damping: 20,
         }}
-        whileHover={{ scale: 1.2 }}
+        whileHover={{ scale: 1.1 }}
         whileTap={{
           scale: 0.8,
           borderRadius: '100%',
@@ -151,7 +79,6 @@ export function Hero() {
         style={{ origin: 0.5 }}
       >
         <Image className="aspect-square object-cover backdrop-blur-3xl drop-shadow-2xl backdrop-brightness-110 rounded-full" src="/images/hero.png" width={500} height={500} alt="hero" />
-        {/*<div ref={mountRef} />*/}
       </motion.div>
     </div>
   );

@@ -54,7 +54,7 @@ export default function Home() {
   return (
     <main className="w-100 md:snap-container">
       <title>Pratik Fandade</title>
-      <div class="gradient-bg">
+      <div className="gradient-bg">
         <svg xmlns="http://www.w3.org/2000/svg">
           <defs>
             <filter id="goo">
