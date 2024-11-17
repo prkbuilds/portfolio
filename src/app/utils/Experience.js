@@ -19,7 +19,7 @@ export function Experience() {
       ref={ref}
     >
       <motion.h1
-        className="text-5xl font-bold mb-9"
+        className="text-5xl font-bold mb-9 pt-20"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ ease: 'linear', duration: 1, x: 0 }}
