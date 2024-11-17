@@ -2,18 +2,13 @@
 
 import { useRef } from 'react';
 import { useScroll, motion } from 'framer-motion';
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 export function Experience() {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["end end", "start start"]
+    offset: ['end end', 'start start'],
   });
 
   return (
@@ -37,17 +32,15 @@ export function Experience() {
             <CardTitle className="text-2xl font-semibold mb-2">
               Senior Technology Associate at Colgate Palmolive
             </CardTitle>
-            <p className="text-sm">
-              August 2023 – August 2024 | Mumbai, India
-            </p>
+            <p className="text-sm">August 2023 – August 2024 | Mumbai, India</p>
           </CardHeader>
           <CardContent>
             <ul className="mt-4 list-disc pl-6">
               <li>
                 Collaborated with 16 developers to build and maintain
-                proprietary software, leveraging Django, React, GCP,
-                Kubernetes, Docker, and Celery to build APIs supporting over 1
-                million concurrent I/Os with low latency.
+                proprietary software, leveraging Django, React, GCP, Kubernetes,
+                Docker, and Celery to build APIs supporting over 1 million
+                concurrent I/Os with low latency.
               </li>
               <li>
                 Assisted a team of developers to design & develop a software
@@ -55,9 +48,9 @@ export function Experience() {
                 savings and better efficacy.
               </li>
               <li>
-                Managed software with a team of 15 employees, providing
-                services to 10,000+ businesses to identify & improve the
-                system for better sales of 100,000+ industry-leading products.
+                Managed software with a team of 15 employees, providing services
+                to 10,000+ businesses to identify & improve the system for
+                better sales of 100,000+ industry-leading products.
               </li>
               <li>
                 Actively engaged with developers to improve front-end
@@ -72,17 +65,15 @@ export function Experience() {
             <CardTitle className="text-2xl font-semibold mb-2">
               Campus Associate at Colgate Palmolive
             </CardTitle>
-            <p className="text-sm">
-              August 2022 – August 2023 | Mumbai, India
-            </p>
+            <p className="text-sm">August 2022 – August 2023 | Mumbai, India</p>
           </CardHeader>
           <CardContent>
             <ul className="mt-4 list-disc pl-6">
               <li>
                 Contributed with developers on improving the front end using
-                libraries like Ag-grid, ant-design.js, and MUI-X to enhance
-                data visualization solutions, causing reduced performance
-                overhead by 70%.
+                libraries like Ag-grid, ant-design.js, and MUI-X to enhance data
+                visualization solutions, causing reduced performance overhead by
+                70%.
               </li>
               <li>
                 Resolved over 100+ bugs, ensuring optimized system performance
@@ -91,8 +82,7 @@ export function Experience() {
               </li>
               <li>
                 Led testing initiatives and enhanced GitHub Actions to improve
-                teamwork across global teams, which enhanced build times by
-                60%.
+                teamwork across global teams, which enhanced build times by 60%.
               </li>
             </ul>
           </CardContent>

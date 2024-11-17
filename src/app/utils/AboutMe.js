@@ -35,9 +35,9 @@ export function AboutMe() {
           I am a skilled Software Developer with experience in designing and
           analyzing web applications. I specialize in front-end and back-end
           development using the MERN stack, Material-UI, REST APIs, and MVC
-          architecture. My expertise extends to scaling cloud applications
-          with GCP and AWS, and I have a strong interest in cryptography and
-          computer security.
+          architecture. My expertise extends to scaling cloud applications with
+          GCP and AWS, and I have a strong interest in cryptography and computer
+          security.
         </motion.p>
         <motion.p
           className="leading-7 mb-3"
@@ -45,10 +45,10 @@ export function AboutMe() {
           animate={{ opacity: 1 }}
           transition={{ ease: 'linear', duration: 2 }}
         >
-          I’ve contributed to the development of enterprise-level software
-          that supports the sale of 10M+ industry-leading products to 100,000+
-          businesses worldwide. Recently, I completed a Stock Market Analysis
-          & Prediction project, presented at IC-ICN 2022, which underscores my
+          I’ve contributed to the development of enterprise-level software that
+          supports the sale of 10M+ industry-leading products to 100,000+
+          businesses worldwide. Recently, I completed a Stock Market Analysis &
+          Prediction project, presented at IC-ICN 2022, which underscores my
           commitment to leveraging advanced technologies for impactful
           solutions.
         </motion.p>
@@ -58,15 +58,18 @@ export function AboutMe() {
           animate={{ opacity: 1 }}
           transition={{ ease: 'linear', duration: 2 }}
         >
-          In addition to my professional work, I am passionate about
-          open-source contributions. Currently, I contribute as a reviewer on
-          the{' '}
-          <a className="text-orange-400 underline underline-offset-2" href="https://github.com/diesel-rs/diesel" target="_blank">
+          In addition to my professional work, I am passionate about open-source
+          contributions. Currently, I contribute as a reviewer on the{' '}
+          <a
+            className="text-orange-400 underline underline-offset-2"
+            href="https://github.com/diesel-rs/diesel"
+            target="_blank"
+          >
             Diesel
           </a>{' '}
-          repository, helping to ensure quality Rust code for a robust
-          database toolkit. This experience has enhanced my collaboration
-          skills and expanded my knowledge in Rust development.
+          repository, helping to ensure quality Rust code for a robust database
+          toolkit. This experience has enhanced my collaboration skills and
+          expanded my knowledge in Rust development.
         </motion.p>
         <motion.p
           className="leading-7 mb-3"
@@ -76,8 +79,7 @@ export function AboutMe() {
         >
           As a Machine Learning enthusiast, I actively engage in projects to
           deepen my expertise and stay abreast of emerging technologies. I am
-          always open to exploring new opportunities and collaborations in
-          tech.
+          always open to exploring new opportunities and collaborations in tech.
         </motion.p>
       </div>
     </div>

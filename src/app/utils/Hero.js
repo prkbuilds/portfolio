@@ -41,9 +41,9 @@ export function Hero() {
           animate={{ opacity: 1 }}
           transition={{ ease: 'linear', duration: 2 }}
         >
-          I am a skilled <b className="text-orange-400">Software Developer</b> with experience in designing and
-          crafting software applications which are Integrated with cloud to
-          help solve real world problems.
+          I am a skilled <b className="text-orange-400">Software Developer</b>{' '}
+          with experience in designing and crafting software applications which
+          are Integrated with cloud to help solve real world problems.
         </motion.p>
         <motion.a
           className="inline-flex items-center border backdrop-blur-3xl drop-shadow-2xl rounded py-3 px-6"
@@ -78,7 +78,13 @@ export function Hero() {
         }}
         style={{ origin: 0.5 }}
       >
-        <Image className="aspect-square object-cover backdrop-blur-3xl drop-shadow-2xl backdrop-brightness-110 rounded-full" src="/images/hero.png" width={500} height={500} alt="hero" />
+        <Image
+          className="aspect-square object-cover backdrop-blur-3xl drop-shadow-2xl backdrop-brightness-110 rounded-full"
+          src="/images/hero.png"
+          width={500}
+          height={500}
+          alt="hero"
+        />
       </motion.div>
     </div>
   );

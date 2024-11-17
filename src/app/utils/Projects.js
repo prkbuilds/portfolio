@@ -9,7 +9,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { Badge } from "@/components/ui/badge"
+import { Badge } from '@/components/ui/badge';
 
 import { FiGithub } from 'react-icons/fi';
 
@@ -49,13 +49,26 @@ export function Projects() {
         </motion.h1>
         <div className="project-list grid grid-cols-1 md:grid-cols-3 gap-4">
           {repos.map((repo) => (
-            <Card className="bg-transparent border-0 backdrop-blur-2xl drop-shadow-2xl backdrop-brightness-110 flex flex-col" key={repo.id}>
+            <Card
+              className="bg-transparent border-0 backdrop-blur-2xl drop-shadow-2xl backdrop-brightness-110 flex flex-col"
+              key={repo.id}
+            >
               <CardHeader>
                 <CardTitle className="text-white">{repo.name}</CardTitle>
-                <CardDescription className="text-white">{repo.description}</CardDescription>
+                <CardDescription className="text-white">
+                  {repo.description}
+                </CardDescription>
                 <div className="flex gap-2 flex-wrap">
-                  {repo.topics.map((topic) => 
-                    (topic === "portfolio") ? null : (<Badge key={topic} className="text-white" variant="outline">{topic}</Badge>)
+                  {repo.topics.map((topic) =>
+                    topic === 'portfolio' ? null : (
+                      <Badge
+                        key={topic}
+                        className="text-white"
+                        variant="outline"
+                      >
+                        {topic}
+                      </Badge>
+                    )
                   )}
                 </div>
               </CardHeader>
@@ -75,7 +88,8 @@ export function Projects() {
                   }}
                   href={repo.html_url}
                 >
-                  View on GitHub &nbsp;<FiGithub size={20} />
+                  View on GitHub &nbsp;
+                  <FiGithub size={20} />
                 </motion.a>
               </CardFooter>
             </Card>

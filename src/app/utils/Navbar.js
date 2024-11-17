@@ -91,7 +91,6 @@ export function NavBar() {
               </ul>
             </NavigationMenuContent>
           </NavigationMenuItem>
-
         </NavigationMenuList>
       ) : (
         <NavigationMenuList className="w-full gap-7">
@@ -101,7 +100,7 @@ export function NavBar() {
               legacyBehavior
               passHref
             >
-              <NavigationMenuLink className="bg-transparent" >
+              <NavigationMenuLink className="bg-transparent">
                 <motion.p
                   className="leading-7"
                   initial={{ opacity: 0 }}
@@ -122,7 +121,7 @@ export function NavBar() {
           </NavigationMenuItem>
           <NavigationMenuItem>
             <Link href="#projects" legacyBehavior passHref>
-              <NavigationMenuLink className="bg-transparent" >
+              <NavigationMenuLink className="bg-transparent">
                 <motion.p
                   className="leading-7"
                   initial={{ opacity: 0 }}
@@ -143,7 +142,7 @@ export function NavBar() {
           </NavigationMenuItem>
           <NavigationMenuItem>
             <Link href="#experience" legacyBehavior passHref>
-              <NavigationMenuLink className="bg-transparent" >
+              <NavigationMenuLink className="bg-transparent">
                 <motion.p
                   className="leading-7"
                   initial={{ opacity: 0 }}
