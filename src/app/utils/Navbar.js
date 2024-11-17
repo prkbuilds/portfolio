@@ -78,9 +78,9 @@ export function NavBar() {
                     Projects
                   </NavigationMenuLink>
                 </Link>
-                <Link href="#contact" legacyBehavior passHref>
+                <Link href="#experience" legacyBehavior passHref>
                   <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                    Contact
+                    Experience
                   </NavigationMenuLink>
                 </Link>
                 <Link href="#about-me" legacyBehavior passHref>
@@ -142,7 +142,7 @@ export function NavBar() {
             </Link>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <Link href="#contact" legacyBehavior passHref>
+            <Link href="#experience" legacyBehavior passHref>
               <NavigationMenuLink className="bg-transparent" >
                 <motion.p
                   className="leading-7"
@@ -157,7 +157,7 @@ export function NavBar() {
                     duration: 2,
                   }}
                 >
-                  Contact
+                  Experience
                 </motion.p>
               </NavigationMenuLink>
             </Link>

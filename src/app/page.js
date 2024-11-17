@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
+import Head from 'next/head';
 import { useInView } from 'react-intersection-observer';
 
 import { NavBar } from './utils/Navbar';
@@ -53,6 +54,39 @@ export default function Home() {
 
   return (
     <main className="w-100 md:snap-container">
+      <Head>
+        <title>Pratik Fandade - Full Stack Developer & Open-Source Contributor</title>
+        <meta
+          name="description"
+          content="Pratik Fandade is a full stack software developer specializing in Rust, JavaScript, and open-source contributions. Explore my portfolio, projects, and blog."
+        />
+        <meta name="keywords" content="Pratik Fandade, Full Stack Developer, Rust Developer, JavaScript, Open-Source Contributor, Portfolio" />
+        <meta name="author" content="Pratik Fandade" />
+
+        {/* Open Graph meta tags for social media previews */}
+        <meta property="og:title" content="Pratik Fandade - Full Stack Developer & Open-Source Contributor" />
+        <meta
+          property="og:description"
+          content="Explore Pratik Fandade's portfolio, including full-stack development projects, open-source contributions, and tech expertise in Rust, JavaScript, and more."
+        />
+        <meta property="og:image" content="https://pratikfandade.vercel.app/_next/image?url=%2Fimages%2Fhero.png&w=1080&q=75" />
+        <meta property="og:url" content="https://pratikfandade.vercel.app" />
+
+        {/* Twitter card meta tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Pratik Fandade - Full Stack Developer & Open-Source Contributor" />
+        <meta
+          name="twitter:description"
+          content="Explore Pratik Fandade's portfolio, including full-stack development projects, open-source contributions, and tech expertise in Rust, JavaScript, and more."
+        />
+        <meta name="twitter:image" content="https://pratikfandade.vercel.app/_next/image?url=%2Fimages%2Fhero.png&w=1080&q=75" />
+
+        {/* Favicon */}
+        <link rel="icon" href="/favicon.ico" />
+
+        {/* Mobile optimization */}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
       <title>Pratik Fandade</title>
       <div className="gradient-bg">
         <svg xmlns="http://www.w3.org/2000/svg">
