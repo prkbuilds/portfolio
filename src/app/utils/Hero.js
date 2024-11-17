@@ -41,9 +41,10 @@ export function Hero() {
           animate={{ opacity: 1 }}
           transition={{ ease: 'linear', duration: 2 }}
         >
-          I am a skilled <b className="text-orange-400">Software Developer</b>{' '}
-          with experience in designing and crafting software applications which
-          are Integrated with cloud to help solve real world problems.
+          I am a proficient{' '}
+          <b>Software Developer and Open Source Contributor</b> with expertise
+          in designing and building cloud-integrated software applications that
+          address real-world challenges effectively.
         </motion.p>
         <motion.a
           className="inline-flex items-center border backdrop-blur-3xl drop-shadow-2xl rounded py-3 px-6"

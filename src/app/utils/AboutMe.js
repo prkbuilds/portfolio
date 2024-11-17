@@ -61,7 +61,7 @@ export function AboutMe() {
           In addition to my professional work, I am passionate about open-source
           contributions. Currently, I contribute as a reviewer on the{' '}
           <a
-            className="text-orange-400 underline underline-offset-2"
+            className="underline underline-offset-2"
             href="https://github.com/diesel-rs/diesel"
             target="_blank"
           >
