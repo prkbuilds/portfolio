@@ -50,7 +50,7 @@ export function NavBar() {
     <>
       <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 flex z-10 gap-4">
         {navbarItems.map((item, index) => (
-          <TooltipProvider key={index}>
+          <TooltipProvider delayDuration={0} key={index}>
             <Tooltip>
               <TooltipTrigger asChild>
                 <motion.div
