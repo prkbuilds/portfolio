@@ -4,6 +4,7 @@ import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import { FontLoader } from 'three/examples/jsm/loaders/FontLoader';
 import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { FiArrowUpRight } from 'react-icons/fi';
 
@@ -134,22 +135,23 @@ export function Hero() {
         </motion.a>
       </div>
       <motion.div
-        className="place-content-center hidden"
+        className="place-content-center"
         initial={{ scale: 0 }}
-        animate={{ rotate: 360, scale: 1 }}
+        animate={{ rotate: 360, scale: 1.1 }}
         transition={{
           type: 'spring',
           stiffness: 260,
           damping: 20,
         }}
-        whileHover={{ scale: 1.1 }}
+        whileHover={{ scale: 1.2 }}
         whileTap={{
           scale: 0.8,
           borderRadius: '100%',
         }}
         style={{ origin: 0.5 }}
       >
-        <div ref={mountRef} />
+        <Image className="aspect-square object-cover backdrop-blur-3xl drop-shadow-2xl backdrop-brightness-110 rounded-full" src="/images/hero.png" width={500} height={500} alt="hero" />
+        {/*<div ref={mountRef} />*/}
       </motion.div>
     </div>
   );
