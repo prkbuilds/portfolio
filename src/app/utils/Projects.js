@@ -9,8 +9,9 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
+import { Badge } from "@/components/ui/badge"
 
-import { FiArrowUpRight } from 'react-icons/fi';
+import { FiGithub } from 'react-icons/fi';
 
 export function Projects() {
   const [repos, setRepos] = useState([]);
@@ -52,6 +53,11 @@ export function Projects() {
               <CardHeader>
                 <CardTitle className="text-white">{repo.name}</CardTitle>
                 <CardDescription className="text-white">{repo.description}</CardDescription>
+                <div className="flex gap-2 flex-wrap">
+                  {repo.topics.map((topic) => 
+                    (topic === "portfolio") ? null : (<Badge className="text-white" variant="outline">{topic}</Badge>)
+                  )}
+                </div>
               </CardHeader>
               <CardFooter>
                 <motion.a
@@ -68,7 +74,7 @@ export function Projects() {
                   }}
                   href={repo.html_url}
                 >
-                  View on GitHub <FiArrowUpRight size={20} />
+                  View on GitHub &nbsp;<FiGithub size={20} />
                 </motion.a>
               </CardFooter>
             </Card>
