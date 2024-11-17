@@ -86,6 +86,7 @@ export default function Home() {
 
         {/* Mobile optimization */}
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="google-site-verification" content="BjVhy_yw7k0zpqLS_jgKMJxfE-CqUjIbOnW7ZGTcl0k" />
       </Head>
       <title>Pratik Fandade</title>
       <div className="gradient-bg">
