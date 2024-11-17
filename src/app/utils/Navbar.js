@@ -12,44 +12,11 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
-import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 import { FiLinkedin, FiGithub, FiTwitter, FiMoon, FiSun } from 'react-icons/fi';
 
 export function NavBar() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
   const [orientation, setOrientation] = useState('vertical');
-
-
-  useEffect(() => {
-    const main = document.querySelector('main');
-    if (!main) return;
-    const darkModePreference = localStorage.getItem('dark-mode');
-    if (darkModePreference === 'enabled') {
-      document.documentElement.classList.add('dark');
-      setIsDarkMode(true);
-      main.style.setProperty('--color', '#0F52BA');
-    } else if (darkModePreference === 'disabled') {
-      document.documentElement.classList.remove('dark');
-      setIsDarkMode(false);
-      main.style.setProperty('--color', '#1EA0FF');
-    }
-  }, []);
-
-  const toggleDarkMode = () => {
-    const main = document.querySelector('main');
-    if (!main) return;
-    if (isDarkMode) {
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem('dark-mode', 'disabled');
-      main.style.setProperty('--color', '#1EA0FF');
-    } else {
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('dark-mode', 'enabled');
-      main.style.setProperty('--color', '#0F52BA');
-    }
-    setIsDarkMode(!isDarkMode);
-  };
 
   useEffect(() => {
     const handleResize = () => {
@@ -60,14 +27,14 @@ export function NavBar() {
       }
     };
 
-    handleResize(); // Check initial load
-    window.addEventListener('resize', handleResize); // Update on resize
+    handleResize();
+    window.addEventListener('resize', handleResize);
 
-    return () => window.removeEventListener('resize', handleResize); // Cleanup
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   return (
-    <NavigationMenu className="fixed backdrop-blur justify-between p-10 max-w-screen w-screen">
+    <NavigationMenu className="fixed text-white backdrop-blur justify-between p-10 max-w-screen w-screen">
       <NavigationMenuList className="place-items-start">
         <NavigationMenuItem>
           <Link href="/" legacyBehavior passHref>
@@ -85,7 +52,7 @@ export function NavBar() {
                   duration: 2,
                 }}
               >
-                Pratik
+                prkbuilds
               </motion.h1>
             </NavigationMenuLink>
           </Link>
@@ -111,7 +78,7 @@ export function NavBar() {
                     Projects
                   </NavigationMenuLink>
                 </Link>
-                <Link href="/#contact" legacyBehavior passHref>
+                <Link href="#contact" legacyBehavior passHref>
                   <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                     Contact
                   </NavigationMenuLink>
@@ -175,7 +142,7 @@ export function NavBar() {
             </Link>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <Link href="/#contact" legacyBehavior passHref>
+            <Link href="#contact" legacyBehavior passHref>
               <NavigationMenuLink className="bg-transparent" >
                 <motion.p
                   className="leading-7"
@@ -225,7 +192,7 @@ export function NavBar() {
               <motion.div
                 initial={{ opacity: 0, x: 100 }}
                 animate={{ opacity: 1, x: 0 }}
-                whileHover={{ scale: 1.2 }}
+                whileHover={{ scale: 1.5 }}
                 whileTap={{ scale: 0.9 }}
                 transition={{
                   type: 'spring',
@@ -245,7 +212,7 @@ export function NavBar() {
               <motion.div
                 initial={{ opacity: 0, x: 100 }}
                 animate={{ opacity: 1, x: 0 }}
-                whileHover={{ scale: 1.2 }}
+                whileHover={{ scale: 1.5 }}
                 whileTap={{ scale: 0.9 }}
                 transition={{
                   type: 'spring',
@@ -269,7 +236,7 @@ export function NavBar() {
               <motion.div
                 initial={{ opacity: 0, x: 100 }}
                 animate={{ opacity: 1, x: 0 }}
-                whileHover={{ scale: 1.2 }}
+                whileHover={{ scale: 1.5 }}
                 whileTap={{ scale: 0.9 }}
                 transition={{
                   type: 'spring',
@@ -282,13 +249,6 @@ export function NavBar() {
               </motion.div>
             </NavigationMenuLink>
           </Link>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          {isDarkMode ? (
-            <FiSun onClick={toggleDarkMode} size={24} />
-          ) : (
-            <FiMoon onClick={toggleDarkMode} size={24} />
-          )}
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
