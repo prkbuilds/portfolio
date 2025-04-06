@@ -10,7 +10,7 @@ export function Experience() {
   return (
     <div
       id="experience"
-      className="snap-section container mx-auto min-h-screen text-white place-content-center p-8 pb-20 gap-20 sm:p-20 font-[family-name:var(--font-geist-sans)] 
+      className="snap-section container mx-auto min-h-screen place-content-center p-8 pb-20 gap-20 sm:p-20 font-[family-name:var(--font-geist-sans)] 
       bg-repeat bg-contain bg-fixed"
       ref={ref}
     >
@@ -23,7 +23,7 @@ export function Experience() {
         Experience
       </motion.h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <Card className="bg-transparent text-white border-0 backdrop-blur-2xl drop-shadow-2xl backdrop-brightness-110">
+        <Card className="bg-transparent border-0 backdrop-blur-2xl drop-shadow-2xl backdrop-brightness-110">
           <CardHeader>
             <CardTitle className="text-2xl font-semibold mb-2">
               Software Engineer at Colgate Palmolive
@@ -56,7 +56,7 @@ export function Experience() {
           </CardContent>
         </Card>
 
-        <Card className="bg-transparent text-white border-0 backdrop-blur-2xl drop-shadow-2xl backdrop-brightness-110">
+        <Card className="bg-transparent border-0 backdrop-blur-2xl drop-shadow-2xl backdrop-brightness-110">
           <CardHeader>
             <CardTitle className="text-2xl font-semibold mb-2">
               Jr. Software Engineer at Colgate Palmolive
@@ -86,7 +86,7 @@ export function Experience() {
           </CardContent>
         </Card>
 
-        <Card className="bg-transparent text-white border-0 backdrop-blur-2xl drop-shadow-2xl backdrop-brightness-110">
+        <Card className="bg-transparent border-0 backdrop-blur-2xl drop-shadow-2xl backdrop-brightness-110">
           <CardHeader>
             <CardTitle className="text-2xl font-semibold mb-2">
               Intern at Colgate Palmolive

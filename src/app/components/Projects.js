@@ -22,6 +22,7 @@ export function Projects() {
         'https://api.github.com/users/prkbuilds/repos'
       );
       const repos = await response.json();
+      console.log(repos);
 
       const specificRepos = repos.filter(
         (repo) => repo.topics && repo.topics.includes('portfolio')
@@ -35,7 +36,7 @@ export function Projects() {
   return (
     <div
       id="projects"
-      className="snap-section container mx-auto min-h-screen place-content-center text-white p-8 pb-20 gap-20 sm:p-20 font-[family-name:var(--font-geist-sans)] 
+      className="snap-section container mx-auto min-h-screen place-content-center p-8 pb-20 gap-20 sm:p-20 font-[family-name:var(--font-geist-sans)] 
       bg-repeat bg-contain bg-fixed"
     >
       <div className="place-content-center pt-20">
@@ -54,16 +55,13 @@ export function Projects() {
               key={repo.id}
             >
               <CardHeader>
-                <CardTitle className="text-white">{repo.name}</CardTitle>
-                <CardDescription className="text-white">
-                  {repo.description}
-                </CardDescription>
+                <CardTitle className="text-lg">{repo.name}</CardTitle>
                 <div className="flex gap-2 flex-wrap">
                   {repo.topics.map((topic) =>
                     topic === 'portfolio' ? null : (
                       <Badge
                         key={topic}
-                        className="text-white"
+                        className="border-black"
                         variant="outline"
                       >
                         {topic}
@@ -71,11 +69,14 @@ export function Projects() {
                     )
                   )}
                 </div>
+                <CardDescription className="text-base text-gray-700">
+                  {repo.description}
+                </CardDescription>
               </CardHeader>
               <div className="flex-grow"></div>
               <CardFooter className="mt-auto">
                 <motion.a
-                  className="inline-flex items-center text-white border rounded py-2 px-3"
+                  className="inline-flex items-center border border-black rounded py-2 px-3"
                   initial={{ opacity: 0, x: -100 }}
                   animate={{ opacity: 1, x: 0 }}
                   whileHover={{ scale: 1.1 }}

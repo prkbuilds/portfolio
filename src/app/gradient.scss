@@ -1,12 +1,16 @@
 :root {
-  --color-bg1: rgb(108, 0, 162);
-  --color-bg2: rgb(0, 17, 82);
-  --color1: 18, 113, 255;
-  --color2: 221, 74, 255;
-  --color3: 100, 220, 255;
-  --color4: 200, 50, 50;
-  --color5: 180, 180, 50;
-  --color-interactive: 140, 100, 255;
+  /* Background */
+  /* Background */
+  --color-bg1: #ffffff;
+  --color-bg2: #fdfbd4; /* Or use a soft gradient */
+
+  /* Bubbles */
+  --color1: 144, 224, 239; /* Light Blue */
+  --color2: 202, 240, 248; /* Pale Blue */
+  --color3: 0, 119, 182; /* Medium Blue */
+  --color4: 15, 75, 130; /* Slightly lighter dark blue bubble */
+  --color5: 180, 220, 250; /* Soft variation */
+  --color-interactive: 100, 200, 255; /* Bright interactive bubble */
   --circle-size: 80%;
   --blending: hard-light;
 }

@@ -6,7 +6,7 @@ export function AboutMe() {
   return (
     <div
       id="about-me"
-      className="snap-section container mx-auto text-white place-content-center min-h-screen p-8 pb-20 gap-20 font-[family-name:var(--font-geist-sans)] 
+      className="snap-section container mx-auto place-content-center min-h-screen p-8 pb-20 gap-20 font-[family-name:var(--font-geist-sans)] 
       bg-[url('/images/grid.png')]/75 bg-repeat bg-contain bg-fixed"
     >
       <div className="place-content-center pt-20">

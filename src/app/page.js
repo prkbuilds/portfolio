@@ -6,7 +6,6 @@ import { useInView } from 'react-intersection-observer';
 
 import { NavBar } from './components/Navbar';
 import { Hero } from './components/Hero';
-import { ParallaxTech } from './components/TechStack';
 import { Projects } from './components/Projects';
 import { Experience } from './components/Experience';
 import { AboutMe } from './components/AboutMe';
@@ -49,7 +48,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="w-100 md:snap-container">
+    <main className="w-100 md:snap-container bg-[url('https://www.transparenttextures.com/patterns/beige-paper.png')] bg-repeat bg-fixed">
       <Head>
         <title>
           Pratik Fandade - Full Stack Developer & Open-Source Contributor
@@ -136,9 +135,6 @@ export default function Home() {
       <NavBar />
       <LazyComponent>
         <Hero />
-      </LazyComponent>
-      <LazyComponent>
-        <ParallaxTech />
       </LazyComponent>
       <LazyComponent>
         <Projects />

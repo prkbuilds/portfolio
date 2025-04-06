@@ -30,17 +30,29 @@ import {
 
 export function NavBar() {
   const navbarItems = [
-    { href: '#hero', icon: <FiHome size={24} />, tooltip: 'Home' },
-    { href: '#projects', icon: <FiPackage size={24} />, tooltip: 'Projects' },
+    {
+      href: '#hero',
+      icon: <FiHome size={24} color="black" />,
+      tooltip: 'Home',
+    },
+    {
+      href: '#projects',
+      icon: <FiPackage size={24} color="black" />,
+      tooltip: 'Projects',
+    },
     {
       href: '#experience',
-      icon: <FiBriefcase size={24} />,
+      icon: <FiBriefcase size={24} color="black" />,
       tooltip: 'Experience',
     },
-    { href: '#about-me', icon: <FiList size={24} />, tooltip: 'About Me' },
+    {
+      href: '#about-me',
+      icon: <FiList size={24} color="black" />,
+      tooltip: 'About Me',
+    },
     {
       href: 'https://drive.google.com/file/d/1Qhj2YHR-TKe4W0dq6t2qJOqCodOz3VZY/view',
-      icon: <FiFileText size={24} />,
+      icon: <FiFileText size={24} color="black" />,
       tooltip: 'Resume',
       external: true, // Optional flag for external links
     },
@@ -78,20 +90,20 @@ export function NavBar() {
                     legacyBehavior
                     passHref
                   >
-                    <Badge className="text-white bg-transparent hover:bg-transparent backdrop-blur-2xl drop-shadow-2xl backdrop-brightness-110 rounded-full p-2">
+                    <Badge className="bg-transparent hover:bg-transparent backdrop-blur-2xl drop-shadow-2xl backdrop-brightness-110 rounded-full p-2">
                       {item.icon}
                     </Badge>
                   </Link>
                 </motion.div>
               </TooltipTrigger>
-              <TooltipContent className="text-white bg-transparent">
+              <TooltipContent className="bg-transparent text-black">
                 <p>{item.tooltip}</p>
               </TooltipContent>
             </Tooltip>
           </TooltipProvider>
         ))}
       </div>
-      <NavigationMenu className="fixed text-white backdrop-blur justify-between p-10 max-w-screen w-screen">
+      <NavigationMenu className="fixed backdrop-blur justify-between p-10 max-w-screen w-screen">
         <NavigationMenuList className="place-items-start">
           <NavigationMenuItem>
             <Link href="/" legacyBehavior passHref>
