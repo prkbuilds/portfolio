@@ -1,15 +1,11 @@
 'use client';
 
 import { useRef } from 'react';
-import { useScroll, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 export function Experience() {
   const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ['end end', 'start start'],
-  });
 
   return (
     <div
@@ -30,31 +26,31 @@ export function Experience() {
         <Card className="bg-transparent text-white border-0 backdrop-blur-2xl drop-shadow-2xl backdrop-brightness-110">
           <CardHeader>
             <CardTitle className="text-2xl font-semibold mb-2">
-              Senior Technology Associate at Colgate Palmolive
+              Software Engineer at Colgate Palmolive
             </CardTitle>
             <p className="text-sm">August 2023 – August 2024 | Mumbai, India</p>
           </CardHeader>
           <CardContent>
-            <ul className="mt-4 list-disc pl-6">
+            <ul className="list-disc pl-6">
               <li>
                 Collaborated with 16 developers to build and maintain
-                proprietary software, leveraging Django, React, GCP, Kubernetes,
-                Docker, and Celery to build APIs supporting over 1 million
-                concurrent I/Os with low latency.
+                proprietary software using Agile methodologies, supporting
+                global inventory planning for 10,000+ businesses.
               </li>
               <li>
-                Assisted a team of developers to design & develop a software
-                solution for strategic market performance, achieving 50% time
-                savings and better efficacy.
+                Developed APIs using Django, React, GCP, Kubernetes, RabbitMQ,
+                Docker, and Celery, supporting over 1million concurrent I/Os
+                with low latency.
               </li>
               <li>
-                Managed software with a team of 15 employees, providing services
-                to 10,000+ businesses to identify & improve the system for
-                better sales of 100,000+ industry-leading products.
+                Improved the design and development of software solutions for
+                Strategic Business Logic, achieving 50% time savingsand
+                increased efficiency
               </li>
               <li>
-                Actively engaged with developers to improve front-end
-                architecture, reducing technical overhead by 30%.
+                Recognized for contributions optimizing front-end architecture,
+                reducing technical overhead in a global market dataplanning
+                solution by 30%.
               </li>
             </ul>
           </CardContent>
@@ -63,27 +59,29 @@ export function Experience() {
         <Card className="bg-transparent text-white border-0 backdrop-blur-2xl drop-shadow-2xl backdrop-brightness-110">
           <CardHeader>
             <CardTitle className="text-2xl font-semibold mb-2">
-              Campus Associate at Colgate Palmolive
+              Jr. Software Engineer at Colgate Palmolive
             </CardTitle>
             <p className="text-sm">August 2022 – August 2023 | Mumbai, India</p>
           </CardHeader>
           <CardContent>
-            <ul className="mt-4 list-disc pl-6">
+            <ul className="list-disc pl-6">
               <li>
-                Contributed with developers on improving the front end using
-                libraries like Ag-grid, ant-design.js, and MUI-X to enhance data
-                visualization solutions, causing reduced performance overhead by
-                70%.
+                Refactored front-end architecture using libraries like Ag-grid,
+                Ant Design, React.js, Redux.js, and MUI-X,enhancing data
+                visualization and reducing performance overhead by 70%.
               </li>
               <li>
-                Resolved over 100+ bugs, ensuring optimized system performance
-                and accuracy, leading to better handling of critical business
-                tasks.
+                Resolved over 100+ bugs and feature requests through test-driven
+                development (TDD), improving system performance and reliability
+                for critical business tasks
               </li>
               <li>
-                Led testing initiatives and enhanced GitHub Actions to improve
-                teamwork across global teams, which enhanced build times by 60%.
+                Led testing initiatives and implemented Unit-tests,
+                Integration-tests, and enhancements with GitHub Actions, JEST,
+                and Cypress, improving collaboration across global teams and
+                reducing build times by 60%.
               </li>
+              <li>Promoted to Software Engineer after 1 year of work.</li>
             </ul>
           </CardContent>
         </Card>
@@ -98,20 +96,21 @@ export function Experience() {
             </p>
           </CardHeader>
           <CardContent>
-            <ul className="mt-4 list-disc pl-6">
+            <ul className="list-disc pl-6">
               <li>
-                Cooperated alongside 6 Full-Stack developers to develop &
+                Collaborated with 6 full-stack developers to develop and
                 maintain industry-grade software used in 100+ countries.
               </li>
               <li>
-                Successfully developed a feature to manage & process 1000s of
-                data points within a second.
+                Authored a feature to process and validate 1000s of data points
+                within seconds using validation pipelines, saving user time by
+                over 50%.
               </li>
               <li>
-                Directly contributed to a global project, becoming a top-10
-                contributor at the time with 50+ commits and 1k+
-                additions/deletions.
+                Ranked as atop-10 contributorto a global software project,
+                delivering over 50 commitsand improving overall code-quality.
               </li>
+              <li>Offered Pre-placement offer after 2 months of internship.</li>
             </ul>
           </CardContent>
         </Card>

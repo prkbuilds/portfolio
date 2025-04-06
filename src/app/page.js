@@ -4,12 +4,12 @@ import { useEffect } from 'react';
 import Head from 'next/head';
 import { useInView } from 'react-intersection-observer';
 
-import { NavBar } from './utils/Navbar';
-import { Hero } from './utils/Hero';
-import { ParallaxTech } from './utils/TechStack';
-import { Projects } from './utils/Projects';
-import { Experience } from './utils/Experience';
-import { AboutMe } from './utils/AboutMe';
+import { NavBar } from './components/Navbar';
+import { Hero } from './components/Hero';
+import { ParallaxTech } from './components/TechStack';
+import { Projects } from './components/Projects';
+import { Experience } from './components/Experience';
+import { AboutMe } from './components/AboutMe';
 
 function LazyComponent({ children }) {
   const { ref, inView } = useInView({ triggerOnce: true });
