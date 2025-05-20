@@ -3,9 +3,15 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+:root {
+  --font-space-grotesk: 'Space Grotesk', sans-serif;
+}
 
 html,
 body {
+  font-family: var(--font-space-grotesk);
   scroll-behavior: smooth;
 }
 
@@ -22,10 +28,6 @@ h1 {
 .snap-section {
   scroll-snap-align: start;
   min-height: 100vh;
-}
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 @layer utilities {
