@@ -57,7 +57,7 @@ export function Hero() {
             damping: 12,
             duration: 2,
           }}
-          href="mailto:pfandade@buffalo.edu"
+          href="mailto:fandadep6@gmail.com"
         >
           Contact Me <FiArrowUpRight size={20} />
         </motion.a>
